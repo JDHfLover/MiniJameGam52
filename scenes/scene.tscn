@@ -1,47 +1,37 @@
 [gd_scene format=3 uid="uid://cto7plypn2sv7"]
 
-[ext_resource type="PackedScene" uid="uid://dbytopopf84hv" path="res://entities/enemies/test_enemy/test_enemy.tscn" id="1_ruw3y"]
+[ext_resource type="PackedScene" uid="uid://cmmd34auylm3f" path="res://entities/enemies/angry_glass/angry_glass.tscn" id="1_5fb3c"]
 [ext_resource type="Script" uid="uid://cyyva07y71728" path="res://entities/towers/tower.gd" id="2_4msxo"]
 [ext_resource type="PackedScene" uid="uid://btgwplsh81poi" path="res://entities/projectiles/cooler_tower_projectile/cooler_tower_projectile.tscn" id="3_4msxo"]
 [ext_resource type="Texture2D" uid="uid://cclw1na52ckt2" path="res://assets/sprites/towers/cooler.png" id="3_tpwpp"]
-[ext_resource type="Script" uid="uid://bwd8kd5afun28" path="res://entities/wave_manager/wave_manager.gd" id="4_5fb3c"]
-[ext_resource type="Script" uid="uid://bi3fo3hobri2a" path="res://entities/wave_manager/wave.gd" id="5_7182s"]
-[ext_resource type="Script" uid="uid://cja3p57gruv2y" path="res://entities/wave_manager/wave_item.gd" id="6_tpwpp"]
-[ext_resource type="Resource" uid="uid://ccpm6bvqi6uud" path="res://entities/wave_manager/wave_item.tres" id="7_7ftgl"]
-[ext_resource type="Resource" uid="uid://33kducav5k7g" path="res://entities/wave_manager/wave.tres" id="8_7182s"]
 
 [sub_resource type="Curve2D" id="Curve2D_grwth"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, -240, 0, 0, 0, 16, 360, -240, 0, 0, 0, 0, 360, 0)
+"points": PackedVector2Array(0, 0, 0, 0, 0, -338.405, -125.21141, 4.539757, 125.21141, -4.539757, 202, -221, 0, 0, 0, 0, 360, 0)
 }
 point_count = 3
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5fb3c"]
-
-[sub_resource type="Resource" id="Resource_dqloj"]
-script = ExtResource("6_tpwpp")
-enemy = ExtResource("1_ruw3y")
-metadata/_custom_type_script = "uid://cja3p57gruv2y"
-
-[sub_resource type="Resource" id="Resource_5yiy0"]
-script = ExtResource("5_7182s")
-wave_items = Array[ExtResource("6_tpwpp")]([SubResource("Resource_dqloj"), ExtResource("7_7ftgl")])
-metadata/_custom_type_script = "uid://bi3fo3hobri2a"
 
 [node name="Scene" type="Node2D" unique_id=481614008]
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=272149691]
 
 [node name="Path2D" type="Path2D" parent="." unique_id=180469636 groups=["enemy_path"]]
+position = Vector2(0, 2)
+scale = Vector2(0.71944445, 1.00591)
 curve = SubResource("Curve2D_grwth")
+
+[node name="AngryGlass" parent="Path2D" unique_id=1859119774 instance=ExtResource("1_5fb3c")]
+position = Vector2(0, -338.405)
 
 [node name="Towers" type="Node2D" parent="." unique_id=1350296824]
 
 [node name="CoolerTower" type="Node2D" parent="Towers" unique_id=2134311744]
 script = ExtResource("2_4msxo")
 damage = 25.0
-attack_range = 37.5
-attack_speed = 0.25
+attack_range = 25.0
+attack_speed = 0.5
 projectile_scene = ExtResource("3_4msxo")
 metadata/_custom_type_script = "uid://cyyva07y71728"
 
@@ -60,19 +50,5 @@ one_shot = true
 
 [node name="AttackPivot" type="Node2D" parent="Towers/CoolerTower" unique_id=1187710206]
 
-[node name="WaveManager" type="Node2D" parent="." unique_id=1891920558]
-script = ExtResource("4_5fb3c")
-waves = Array[ExtResource("5_7182s")]([SubResource("Resource_5yiy0"), ExtResource("8_7182s")])
-
-[node name="EnemyTimer" type="Timer" parent="WaveManager" unique_id=471607562]
-wait_time = 0.001
-one_shot = true
-
-[node name="WaveTimer" type="Timer" parent="WaveManager" unique_id=1601247514]
-wait_time = 0.001
-one_shot = true
-
 [connection signal="area_entered" from="Towers/CoolerTower/AttackArea" to="Towers/CoolerTower" method="_on_attack_area_area_entered"]
 [connection signal="area_exited" from="Towers/CoolerTower/AttackArea" to="Towers/CoolerTower" method="_on_attack_area_area_exited"]
-[connection signal="timeout" from="WaveManager/EnemyTimer" to="WaveManager" method="_on_enemy_timer_timeout"]
-[connection signal="timeout" from="WaveManager/WaveTimer" to="WaveManager" method="_on_wave_timer_timeout"]

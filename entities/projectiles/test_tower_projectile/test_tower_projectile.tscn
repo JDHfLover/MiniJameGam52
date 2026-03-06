@@ -1,0 +1,29 @@
+[gd_scene format=3 uid="uid://btgwplsh81poi"]
+
+[ext_resource type="Script" uid="uid://71hdodh46qqg" path="res://entities/projectiles/projectile.gd" id="1_1012p"]
+
+[sub_resource type="Gradient" id="Gradient_t7and"]
+offsets = PackedFloat32Array(0, 0.53614455, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.46385545, 0.46385545, 0.46385545, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ruw3y"]
+gradient = SubResource("Gradient_t7and")
+width = 16
+height = 16
+fill_to = Vector2(0, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5fb3c"]
+size = Vector2(16, 16)
+
+[node name="TestTowerProjectile" type="Area2D" unique_id=766336221]
+script = ExtResource("1_1012p")
+speed = 500.0
+life_time = 10.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1209662005]
+texture = SubResource("GradientTexture2D_ruw3y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=196130171]
+shape = SubResource("RectangleShape2D_5fb3c")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

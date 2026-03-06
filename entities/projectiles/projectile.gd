@@ -2,8 +2,6 @@ extends Area2D
 class_name Projectile
 
 @export var speed: float
-@export var life_time: float
-var life_time_left := life_time
 var damage: float
 
 var target: Node2D
@@ -15,8 +13,10 @@ func _on_area_entered(area):
 		queue_free()
 
 func _physics_process(delta: float) -> void:
-	if(is_instance_valid(target)):direction = (target.global_position - global_position).normalized()
+	if(is_instance_valid(target)):
+		direction = (target.global_position - global_position).normalized()
+	else:
+		queue_free()
 	global_position += direction*speed*delta
-	life_time-=delta
-	if(life_time <= 0):queue_free()
+	global_rotation = direction.angle()
 	

@@ -5,12 +5,15 @@ extends Node2D
 var current_wave := 0
 var current_enemy := 0 
 
-@onready var enemy_timer: Timer = $EnemyTimer
-@onready var wave_timer: Timer = $WaveTimer
+@onready var enemy_timer: Timer
+@onready var wave_timer: Timer
 @onready var enemy_path: Path2D
 
 func _ready() -> void:
+	enemy_timer = $EnemyTimer
+	wave_timer = $WaveTimer
 	enemy_path = get_tree().get_first_node_in_group("enemy_path")
+	wave_timer.start(waves[current_wave].delay_before_wave)
 
 func _on_enemy_timer_timeout():
 	spawn_next_enemy()

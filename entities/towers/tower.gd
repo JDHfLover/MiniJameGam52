@@ -36,8 +36,8 @@ func update_target():
 		return
 	targets.sort_custom(func(a,b): return a.progress > b.progress)
 	var index: int
-	if(attack_modes[attack_mode] == "first"):index = len(targets)-1
-	elif (attack_modes[attack_mode] == "last"):index = 0
+	if(attack_modes[attack_mode] == "first"):index = 0
+	elif (attack_modes[attack_mode] == "last"):index = targets.size()-1
 	elif(attack_modes[attack_mode] == "random"): index = randi() % len(targets)
 	current_target = targets[index]
 

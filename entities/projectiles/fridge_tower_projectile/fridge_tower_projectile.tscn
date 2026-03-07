@@ -1,0 +1,67 @@
+[gd_scene format=3 uid="uid://cbj1qsqinkq5v"]
+
+[ext_resource type="Script" uid="uid://71hdodh46qqg" path="res://entities/projectiles/projectile.gd" id="1_knfj1"]
+[ext_resource type="Texture2D" uid="uid://co6rtpbt0yiwk" path="res://assets/sprites/projectiles/ice_cube.png" id="2_1x2qh"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tpwpp"]
+
+[sub_resource type="Animation" id="Animation_7ftgl"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_dqloj"]
+resource_name = "move"
+length = 0.2
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.025, 0.05, 0.075, 0.1, 0.125, 0.15, 0.175),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5yiy0"]
+_data = {
+&"RESET": SubResource("Animation_7ftgl"),
+&"move": SubResource("Animation_dqloj")
+}
+
+[node name="FridgeTowerProjectile" type="Area2D" unique_id=1853074851]
+script = ExtResource("1_knfj1")
+speed = 750.0
+facing_move_direction = false
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=77479948]
+texture_filter = 1
+position = Vector2(0, 2)
+scale = Vector2(2, 2)
+texture = ExtResource("2_1x2qh")
+hframes = 8
+frame = 1
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1833088901]
+scale = Vector2(1.6, 1.6)
+shape = SubResource("RectangleShape2D_tpwpp")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1963406280]
+libraries/ = SubResource("AnimationLibrary_5yiy0")
+autoplay = &"move"
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

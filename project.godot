@@ -24,6 +24,8 @@ window/size/viewport_height=720
 
 enemy=""
 enemy_path=""
+money_manager=""
+tower_slot=""
 
 [physics]
 

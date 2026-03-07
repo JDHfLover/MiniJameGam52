@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://cvoiiqx7py533"]
+
+[ext_resource type="Script" uid="uid://cyyva07y71728" path="res://entities/towers/tower.gd" id="1_pfq68"]
+[ext_resource type="Script" uid="uid://bqkdvlolnnwfo" path="res://entities/towers/tower_level.gd" id="2_j5ibt"]
+[ext_resource type="PackedScene" uid="uid://btgwplsh81poi" path="res://entities/projectiles/cooler_tower_projectile/cooler_tower_projectile.tscn" id="3_2747e"]
+[ext_resource type="Texture2D" uid="uid://cclw1na52ckt2" path="res://assets/sprites/towers/cooler.png" id="4_xvgkd"]
+[ext_resource type="Texture2D" uid="uid://bxp5nmj28c7ha" path="res://assets/sprites/Other/Upgrade_stars.png" id="5_j5ibt"]
+
+[sub_resource type="Resource" id="Resource_t7and"]
+script = ExtResource("2_j5ibt")
+damage = 25.0
+attack_speed = 0.25
+attack_range = 250.0
+upgrade_cost = 100
+metadata/_custom_type_script = "uid://bqkdvlolnnwfo"
+
+[sub_resource type="Resource" id="Resource_pfq68"]
+script = ExtResource("2_j5ibt")
+damage = 50.0
+attack_speed = 0.25
+attack_range = 300.0
+upgrade_cost = 200
+metadata/_custom_type_script = "uid://bqkdvlolnnwfo"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5fb3c"]
+
+[node name="CoolerTower" type="Node2D" unique_id=203984698]
+script = ExtResource("1_pfq68")
+build_cost = 250
+levels = Array[ExtResource("2_j5ibt")]([SubResource("Resource_t7and"), SubResource("Resource_pfq68")])
+projectile_scene = ExtResource("3_2747e")
+metadata/_custom_type_script = "uid://cyyva07y71728"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1938857833]
+texture_filter = 1
+position = Vector2(0, -16)
+scale = Vector2(2, 2)
+texture = ExtResource("4_xvgkd")
+
+[node name="AttackArea" type="Area2D" parent="." unique_id=1467377554]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=2035323859]
+shape = SubResource("CircleShape2D_5fb3c")
+
+[node name="AttackTimer" type="Timer" parent="." unique_id=1869432628]
+one_shot = true
+
+[node name="AttackPivot" type="Node2D" parent="." unique_id=1757541177]
+
+[node name="LevelIndicator" type="Sprite2D" parent="." unique_id=835830798]
+z_index = 1
+texture_filter = 1
+position = Vector2(0, 16)
+texture = ExtResource("5_j5ibt")
+hframes = 2
+vframes = 3
+
+[connection signal="area_entered" from="AttackArea" to="." method="_on_attack_area_area_entered"]
+[connection signal="area_exited" from="AttackArea" to="." method="_on_attack_area_area_exited"]

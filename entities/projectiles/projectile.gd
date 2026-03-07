@@ -6,6 +6,7 @@ var damage: float
 
 var target: Node2D
 var direction:Vector2
+@export var facing_move_direction := true
 
 func _on_area_entered(area):
 	if(area.get_parent() == target):
@@ -18,5 +19,5 @@ func _physics_process(delta: float) -> void:
 	else:
 		queue_free()
 	global_position += direction*speed*delta
-	global_rotation = direction.angle()
+	if(facing_move_direction):global_rotation = direction.angle()
 	

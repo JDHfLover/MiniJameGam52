@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://bpj04k51shu64"]
+
+[ext_resource type="Script" uid="uid://m26ny5gob6uv" path="res://entities/money_manager/money_manager.gd" id="1_gpiyd"]
+
+[node name="MoneyManager" type="Node2D" unique_id=2009508734 groups=["money_manager"]]
+script = ExtResource("1_gpiyd")
+money = 2480

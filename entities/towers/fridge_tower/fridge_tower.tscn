@@ -1,0 +1,114 @@
+[gd_scene format=3 uid="uid://jt20te3l4ndw"]
+
+[ext_resource type="Script" uid="uid://cyyva07y71728" path="res://entities/towers/tower.gd" id="1_p1v3f"]
+[ext_resource type="Script" uid="uid://bqkdvlolnnwfo" path="res://entities/towers/tower_level.gd" id="2_jav27"]
+[ext_resource type="PackedScene" uid="uid://cbj1qsqinkq5v" path="res://entities/projectiles/fridge_tower_projectile/fridge_tower_projectile.tscn" id="3_015ve"]
+[ext_resource type="Texture2D" uid="uid://7ocwk7w5ct78" path="res://assets/sprites/towers/fridge.png" id="4_fqgws"]
+[ext_resource type="Texture2D" uid="uid://bxp5nmj28c7ha" path="res://assets/sprites/Other/Upgrade_stars.png" id="5_ab4uo"]
+
+[sub_resource type="Resource" id="Resource_gjmho"]
+script = ExtResource("2_jav27")
+damage = 99.0
+attack_speed = 0.5
+attack_range = 200.0
+upgrade_cost = 200
+metadata/_custom_type_script = "uid://bqkdvlolnnwfo"
+
+[sub_resource type="Resource" id="Resource_t7and"]
+script = ExtResource("2_jav27")
+damage = 150.0
+attack_speed = 0.5
+attack_range = 300.0
+upgrade_cost = 300
+metadata/_custom_type_script = "uid://bqkdvlolnnwfo"
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_5fb3c"]
+
+[sub_resource type="Animation" id="Animation_ruw3y"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+
+[sub_resource type="Animation" id="Animation_7182s"]
+resource_name = "attack"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.09, 0.18, 0.27, 0.36, 0.45, 0.54, 0.63, 0.72, 0.81, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"spawn_projectile"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_tpwpp"]
+_data = {
+&"RESET": SubResource("Animation_ruw3y"),
+&"attack": SubResource("Animation_7182s")
+}
+
+[node name="FridgeTower" type="Node2D" unique_id=561663705]
+script = ExtResource("1_p1v3f")
+build_cost = 300
+levels = Array[ExtResource("2_jav27")]([SubResource("Resource_gjmho"), SubResource("Resource_t7and")])
+projectile_scene = ExtResource("3_015ve")
+metadata/_custom_type_script = "uid://cyyva07y71728"
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1073470973]
+texture_filter = 1
+position = Vector2(-8, -8)
+scale = Vector2(2, 2)
+texture = ExtResource("4_fqgws")
+hframes = 11
+frame = 1
+
+[node name="AttackArea" type="Area2D" parent="." unique_id=434624286]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackArea" unique_id=1992622186]
+shape = SubResource("CircleShape2D_5fb3c")
+
+[node name="AttackTimer" type="Timer" parent="." unique_id=848723799]
+one_shot = true
+
+[node name="AttackPivot" type="Node2D" parent="." unique_id=1223978214]
+
+[node name="LevelIndicator" type="Sprite2D" parent="." unique_id=530069920]
+z_index = 1
+texture_filter = 1
+position = Vector2(0, 16)
+texture = ExtResource("5_ab4uo")
+hframes = 2
+vframes = 3
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1266025878]
+libraries/ = SubResource("AnimationLibrary_tpwpp")
+
+[connection signal="area_entered" from="AttackArea" to="." method="_on_attack_area_area_entered"]
+[connection signal="area_exited" from="AttackArea" to="." method="_on_attack_area_area_exited"]

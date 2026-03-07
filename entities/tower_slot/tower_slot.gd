@@ -1,0 +1,7 @@
+extends Node2D
+
+signal clicked(node: Node2D)
+
+func _on_area_2d_input_event(_viewport, event, _shape_idx):
+	if event is InputEventMouseButton and event.pressed and event.button_index == MOUSE_BUTTON_LEFT:
+		clicked.emit(self)

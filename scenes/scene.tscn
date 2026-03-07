@@ -1,19 +1,24 @@
 [gd_scene format=3 uid="uid://cto7plypn2sv7"]
 
 [ext_resource type="PackedScene" uid="uid://cmmd34auylm3f" path="res://entities/enemies/angry_glass/angry_glass.tscn" id="1_5fb3c"]
+[ext_resource type="PackedScene" uid="uid://r8nttcnlmiud" path="res://scenes/map.tscn" id="1_gjmho"]
 [ext_resource type="Script" uid="uid://cyyva07y71728" path="res://entities/towers/tower.gd" id="2_4msxo"]
 [ext_resource type="PackedScene" uid="uid://btgwplsh81poi" path="res://entities/projectiles/cooler_tower_projectile/cooler_tower_projectile.tscn" id="3_4msxo"]
 [ext_resource type="Texture2D" uid="uid://cclw1na52ckt2" path="res://assets/sprites/towers/cooler.png" id="3_tpwpp"]
 
 [sub_resource type="Curve2D" id="Curve2D_grwth"]
 _data = {
-"points": PackedVector2Array(0, 0, 0, 0, 0, -338.405, -125.21141, 4.539757, 125.21141, -4.539757, 202, -221, 0, 0, 0, 0, 360, 0)
+"points": PackedVector2Array(0, 0, 0, 0, -672.7413, -239.58406, -24.300232, -19.518066, 24.300232, 19.518066, -663.0116, 74.55935, 0, 0, 0, 0, -145.94594, 74.55935, 0, 0, 0, 0, -130.65637, -204.78969, 0, 0, 0, 0, 391.96912, -204.78969, 0, 0, 0, 0, 400.30887, -15.905995, 0, 0, 0, 0, 658.8417, -13.917747, 0, 0, 0, 0, 667.18146, 203.79556)
 }
-point_count = 3
+point_count = 8
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5fb3c"]
+radius = 159.01257
 
 [node name="Scene" type="Node2D" unique_id=481614008]
+
+[node name="map" parent="." unique_id=2104647957 instance=ExtResource("1_gjmho")]
+position = Vector2(-629, -350)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=272149691]
 
@@ -23,32 +28,35 @@ scale = Vector2(0.71944445, 1.00591)
 curve = SubResource("Curve2D_grwth")
 
 [node name="AngryGlass" parent="Path2D" unique_id=1859119774 instance=ExtResource("1_5fb3c")]
-position = Vector2(0, -338.405)
+position = Vector2(-672.7413, -239.58406)
 
 [node name="Towers" type="Node2D" parent="." unique_id=1350296824]
 
 [node name="CoolerTower" type="Node2D" parent="Towers" unique_id=2134311744]
 script = ExtResource("2_4msxo")
 damage = 25.0
-attack_range = 25.0
+attack_range = 200.0
 attack_speed = 0.5
 projectile_scene = ExtResource("3_4msxo")
 metadata/_custom_type_script = "uid://cyyva07y71728"
 
 [node name="Sprite2D" type="Sprite2D" parent="Towers/CoolerTower" unique_id=1597215273]
 texture_filter = 1
+position = Vector2(-201, -27)
 scale = Vector2(4, 4)
 texture = ExtResource("3_tpwpp")
 
 [node name="AttackArea" type="Area2D" parent="Towers/CoolerTower" unique_id=578949625]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Towers/CoolerTower/AttackArea" unique_id=437989672]
+position = Vector2(-201, -14)
 shape = SubResource("CircleShape2D_5fb3c")
 
 [node name="AttackTimer" type="Timer" parent="Towers/CoolerTower" unique_id=889525586]
 one_shot = true
 
 [node name="AttackPivot" type="Node2D" parent="Towers/CoolerTower" unique_id=1187710206]
+position = Vector2(-200, -10)
 
 [connection signal="area_entered" from="Towers/CoolerTower/AttackArea" to="Towers/CoolerTower" method="_on_attack_area_area_entered"]
 [connection signal="area_exited" from="Towers/CoolerTower/AttackArea" to="Towers/CoolerTower" method="_on_attack_area_area_exited"]

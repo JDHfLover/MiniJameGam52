@@ -1,0 +1,21 @@
+[gd_scene format=3 uid="uid://btgwplsh81poi"]
+
+[ext_resource type="Script" uid="uid://71hdodh46qqg" path="res://entities/projectiles/projectile.gd" id="1_1012p"]
+[ext_resource type="Texture2D" uid="uid://sv6h0es8cjp7" path="res://assets/sprites/projectiles/drop.png" id="2_2r2ho"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5fb3c"]
+size = Vector2(16, 16)
+
+[node name="TestTowerProjectile" type="Area2D" unique_id=766336221]
+script = ExtResource("1_1012p")
+speed = 500.0
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1209662005]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("2_2r2ho")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=196130171]
+shape = SubResource("RectangleShape2D_5fb3c")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

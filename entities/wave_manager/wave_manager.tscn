@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://c7rlynyykxv24"]
+
+[ext_resource type="Script" uid="uid://bwd8kd5afun28" path="res://entities/wave_manager/wave_manager.gd" id="1_1regr"]
+
+[node name="WaveManager" type="Node2D" unique_id=813043354]
+script = ExtResource("1_1regr")
+
+[node name="EnemyTimer" type="Timer" parent="." unique_id=791449451]
+wait_time = 0.001
+one_shot = true
+
+[node name="WaveTimer" type="Timer" parent="." unique_id=1193362675]
+wait_time = 0.001
+one_shot = true
+
+[connection signal="timeout" from="EnemyTimer" to="." method="_on_enemy_timer_timeout"]
+[connection signal="timeout" from="WaveTimer" to="." method="_on_wave_timer_timeout"]

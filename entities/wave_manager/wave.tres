@@ -1,0 +1,18 @@
+[gd_resource type="Resource" script_class="Wave" format=3 uid="uid://33kducav5k7g"]
+
+[ext_resource type="Script" uid="uid://bi3fo3hobri2a" path="res://entities/wave_manager/wave.gd" id="1_rqawk"]
+[ext_resource type="Script" uid="uid://cja3p57gruv2y" path="res://entities/wave_manager/wave_item.gd" id="2_2wsru"]
+[ext_resource type="Resource" uid="uid://ccpm6bvqi6uud" path="res://entities/wave_manager/wave_item.tres" id="3_veuoi"]
+[ext_resource type="PackedScene" uid="uid://dbytopopf84hv" path="res://entities/enemies/test_enemy/test_enemy.tscn" id="4_q7u0e"]
+
+[sub_resource type="Resource" id="Resource_6gidx"]
+script = ExtResource("2_2wsru")
+enemy = ExtResource("4_q7u0e")
+delay_before_enemy = 1.0
+metadata/_custom_type_script = "uid://cja3p57gruv2y"
+
+[resource]
+script = ExtResource("1_rqawk")
+wave_items = Array[ExtResource("2_2wsru")]([ExtResource("3_veuoi"), SubResource("Resource_6gidx")])
+delay_before_wave = 2.0
+metadata/_custom_type_script = "uid://bi3fo3hobri2a"

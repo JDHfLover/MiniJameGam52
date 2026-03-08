@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://cyyva07y71728" path="res://entities/towers/tower.gd" id="1_pfq68"]
 [ext_resource type="Script" uid="uid://bqkdvlolnnwfo" path="res://entities/towers/tower_level.gd" id="2_j5ibt"]
 [ext_resource type="PackedScene" uid="uid://btgwplsh81poi" path="res://entities/projectiles/cooler_tower_projectile/cooler_tower_projectile.tscn" id="3_2747e"]
-[ext_resource type="Texture2D" uid="uid://cclw1na52ckt2" path="res://assets/sprites/towers/cooler.png" id="4_xvgkd"]
-[ext_resource type="Texture2D" uid="uid://bxp5nmj28c7ha" path="res://assets/sprites/Other/Upgrade_stars.png" id="5_j5ibt"]
+[ext_resource type="Texture2D" uid="uid://doblfa1kwal7l" path="res://assets/sprites/towers/cooler.png" id="4_xvgkd"]
+[ext_resource type="Texture2D" uid="uid://bxp5nmj28c7ha" path="res://assets/sprites/Other/upgrade_stars.png" id="5_j5ibt"]
 
 [sub_resource type="Resource" id="Resource_t7and"]
 script = ExtResource("2_j5ibt")

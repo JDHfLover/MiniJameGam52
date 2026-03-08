@@ -3,8 +3,8 @@
 [ext_resource type="Script" uid="uid://cyyva07y71728" path="res://entities/towers/tower.gd" id="1_p1v3f"]
 [ext_resource type="Script" uid="uid://bqkdvlolnnwfo" path="res://entities/towers/tower_level.gd" id="2_jav27"]
 [ext_resource type="PackedScene" uid="uid://cbj1qsqinkq5v" path="res://entities/projectiles/fridge_tower_projectile/fridge_tower_projectile.tscn" id="3_015ve"]
-[ext_resource type="Texture2D" uid="uid://7ocwk7w5ct78" path="res://assets/sprites/towers/fridge.png" id="4_fqgws"]
-[ext_resource type="Texture2D" uid="uid://bxp5nmj28c7ha" path="res://assets/sprites/Other/Upgrade_stars.png" id="5_ab4uo"]
+[ext_resource type="Texture2D" uid="uid://71k6typtg11d" path="res://assets/sprites/towers/fridge.png" id="4_fqgws"]
+[ext_resource type="Texture2D" uid="uid://bxp5nmj28c7ha" path="res://assets/sprites/Other/upgrade_stars.png" id="5_ab4uo"]
 
 [sub_resource type="Resource" id="Resource_gjmho"]
 script = ExtResource("2_jav27")

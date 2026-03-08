@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://71k6typtg11d"
-path="res://.godot/imported/fridge.png-54f5ea1770c4d53ba48876fc1dbcd860.ctex"
+uid="uid://eefqu2jefrbc"
+path="res://.godot/imported/blizzard_whistle.png-a9977fa6e5f49fa7e2d0675b52a187ee.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/towers/fridge.png"
-dest_files=["res://.godot/imported/fridge.png-54f5ea1770c4d53ba48876fc1dbcd860.ctex"]
+source_file="res://assets/sprites/UI/blizzard_whistle.png"
+dest_files=["res://.godot/imported/blizzard_whistle.png-a9977fa6e5f49fa7e2d0675b52a187ee.ctex"]
 
 [params]
 

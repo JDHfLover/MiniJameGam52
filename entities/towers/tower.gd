@@ -11,6 +11,10 @@ var sell_cost: int = build_cost/2
 var attack_modes := ["first","last","random"]
 var attack_mode := 0
 var current_level := 1
+var attack_range_shown := false:
+	set(value):
+		attack_range_shown = value
+		queue_redraw()
 
 @export var levels: Array[TowerLevel] = []
 @onready var attack_timer: Timer = $AttackTimer
@@ -41,6 +45,10 @@ func _physics_process(delta: float) -> void:
 		update_target()
 		if(is_instance_valid(current_target)):
 			attack()
+func _draw() -> void:
+	if attack_range_shown:
+		draw_circle(Vector2.ZERO, attack_range, Color(1.0, 0.0, 0.0, 0.25))
+		draw_arc(Vector2.ZERO, attack_range, 0, TAU, 64, Color(0.0, 0.0, 0.0, 1.0), 1.0)
 
 func update_target():
 	if(targets.is_empty()):
@@ -81,6 +89,7 @@ func apply_level_stats():
 		level_indicator.show()
 		level_indicator.frame = current_level - 2
 	if(animation_player):animation_player.speed_scale = 1/attack_speed
+	queue_redraw()
 
 func upgrade():
 	if(current_level >= levels.size()):

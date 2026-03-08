@@ -26,6 +26,8 @@ enemy=""
 enemy_path=""
 money_manager=""
 tower_slot=""
+hud=""
+health_manager=""
 
 [physics]
 

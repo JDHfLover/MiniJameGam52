@@ -1,7 +1,8 @@
 extends Node2D
 
 var money_manager: Node2D
-@export var tower_menu: Control
+var hud: CanvasLayer
+var tower_menu: Control
 @export var tower_scenes: Array[PackedScene] = []
 var active_tower_slot: Node2D
 var upgrade_menu: Control
@@ -12,6 +13,9 @@ var build_buttons: Array[Button] = []
 
 func _ready() -> void:
 	money_manager = get_tree().get_first_node_in_group("money_manager")
+	hud = get_tree().get_first_node_in_group("hud")
+	tower_menu = hud.get_node("TowerMenu")
+	print(tower_menu)
 	upgrade_menu = tower_menu.get_node("UpgradeMenu")
 	build_menu = tower_menu.get_node("BuildMenu")
 	upgrade_button = upgrade_menu.get_node("UpgradeButton")
@@ -48,13 +52,20 @@ func open_build_menu():
 	build_menu.show()
 
 func _on_tower_slot_clicked(slot_node:Node2D):
+	if (is_instance_valid(active_tower_slot) and active_tower_slot.get_child_count() > 0):
+		var old_tower = active_tower_slot.get_child(-1)
+		if(old_tower is Tower):
+			old_tower.attack_range_shown = false
 	active_tower_slot = slot_node
-	if(tower_menu.visible and tower_menu.global_position == slot_node.global_position - Vector2(tower_menu.size.x/2,0)):
+	var screen_pos = slot_node.get_global_transform_with_canvas().get_origin()
+	var target_menu_pos = screen_pos - Vector2(tower_menu.size.x / 2, 0)
+	if(tower_menu.visible and tower_menu.position == target_menu_pos):
 		tower_menu.hide()
 		return
-	tower_menu.global_position = slot_node.global_position - Vector2(tower_menu.size.x/2,0)
+	tower_menu.global_position = target_menu_pos
 	if(slot_node.get_child(-1) is Tower):
 		open_upgrade_menu()
+		active_tower_slot.get_child(-1).attack_range_shown = true
 	else:
 		open_build_menu()
 	tower_menu.show()

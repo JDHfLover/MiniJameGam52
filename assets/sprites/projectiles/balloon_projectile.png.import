@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://4uwln0rbrfjy"
-path="res://.godot/imported/Tower_buttons.png-7827fbc1219c7d669f9daee35e97e733.ctex"
+uid="uid://l8r8chtblyxp"
+path="res://.godot/imported/balloon_projectile.png-c15a899a93fba5d2de739dd8360b2bfd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/UI/Tower_buttons.png"
-dest_files=["res://.godot/imported/Tower_buttons.png-7827fbc1219c7d669f9daee35e97e733.ctex"]
+source_file="res://assets/sprites/projectiles/balloon_projectile.png"
+dest_files=["res://.godot/imported/balloon_projectile.png-c15a899a93fba5d2de739dd8360b2bfd.ctex"]
 
 [params]
 

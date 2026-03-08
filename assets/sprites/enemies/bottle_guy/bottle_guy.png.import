@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://71k6typtg11d"
-path="res://.godot/imported/fridge.png-54f5ea1770c4d53ba48876fc1dbcd860.ctex"
+uid="uid://cs20b5gh0okfe"
+path="res://.godot/imported/bottle_guy.png-02e3995889e9cf0ef1da87558e16cae7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/towers/fridge.png"
-dest_files=["res://.godot/imported/fridge.png-54f5ea1770c4d53ba48876fc1dbcd860.ctex"]
+source_file="res://assets/sprites/enemies/bottle_guy/bottle_guy.png"
+dest_files=["res://.godot/imported/bottle_guy.png-02e3995889e9cf0ef1da87558e16cae7.ctex"]
 
 [params]
 

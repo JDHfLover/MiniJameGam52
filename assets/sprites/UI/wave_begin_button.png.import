@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://71k6typtg11d"
-path="res://.godot/imported/fridge.png-54f5ea1770c4d53ba48876fc1dbcd860.ctex"
+uid="uid://b3hx4gvj3po7v"
+path="res://.godot/imported/wave_begin_button.png-5e7d45ee69893802f4b45582158d6b50.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/towers/fridge.png"
-dest_files=["res://.godot/imported/fridge.png-54f5ea1770c4d53ba48876fc1dbcd860.ctex"]
+source_file="res://assets/sprites/UI/wave_begin_button.png"
+dest_files=["res://.godot/imported/wave_begin_button.png-5e7d45ee69893802f4b45582158d6b50.ctex"]
 
 [params]
 

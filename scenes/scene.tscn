@@ -1,11 +1,15 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 [gd_scene format=3 uid="uid://bxk0ev0xoxkqh"]
+=======
+[gd_scene format=3 uid="uid://cto7plypn2sv7"]
+>>>>>>> parent of 0959b5c (x)
 
 [ext_resource type="PackedScene" uid="uid://cmmd34auylm3f" path="res://entities/enemies/angry_glass/angry_glass.tscn" id="1_5fb3c"]
-[ext_resource type="PackedScene" path="res://scenes/map.tscn" id="1_gjmho"]
+[ext_resource type="PackedScene" uid="uid://r8nttcnlmiud" path="res://scenes/map.tscn" id="1_gjmho"]
 [ext_resource type="Script" uid="uid://cyyva07y71728" path="res://entities/towers/tower.gd" id="2_4msxo"]
 [ext_resource type="PackedScene" uid="uid://btgwplsh81poi" path="res://entities/projectiles/cooler_tower_projectile/cooler_tower_projectile.tscn" id="3_4msxo"]
-[ext_resource type="Texture2D" path="res://assets/sprites/towers/cooler.png" id="3_tpwpp"]
+[ext_resource type="Texture2D" uid="uid://cclw1na52ckt2" path="res://assets/sprites/towers/cooler.png" id="3_tpwpp"]
 
 [sub_resource type="Curve2D" id="Curve2D_grwth"]
 _data = {

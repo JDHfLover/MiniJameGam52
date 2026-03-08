@@ -2,20 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-<<<<<<< HEAD
-uid="uid://doblfa1kwal7l"
-=======
-uid="uid://cclw1na52ckt2"
->>>>>>> parent of 0959b5c (x)
-path="res://.godot/imported/cooler.png-675196f4a72342da59ddacd087ce21e9.ctex"
+uid="uid://dq6tuvwvsie1x"
+path="res://.godot/imported/ice_cannon.png-8dcf03cb53b60d07da150e3577e13989.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/towers/cooler.png"
-dest_files=["res://.godot/imported/cooler.png-675196f4a72342da59ddacd087ce21e9.ctex"]
+source_file="res://assets/sprites/towers/ice_cannon.png"
+dest_files=["res://.godot/imported/ice_cannon.png-8dcf03cb53b60d07da150e3577e13989.ctex"]
 
 [params]
 

@@ -1,0 +1,178 @@
+[gd_scene format=3 uid="uid://ccsjh8c0iatp1"]
+
+[ext_resource type="Script" uid="uid://d0s1fxxc4nsh4" path="res://entities/enemies/enemy.gd" id="1_2mgeu"]
+[ext_resource type="Gradient" uid="uid://h0tdl2408i0" path="res://assets/sprites/enemies/water_gradient.tres" id="2_4bebl"]
+[ext_resource type="Texture2D" uid="uid://saahqcm0lv7r" path="res://assets/sprites/enemies/goblet_gentleman/goblet_gentelman.png" id="3_swh2g"]
+[ext_resource type="Texture2D" uid="uid://dbc2qqx1kq880" path="res://assets/sprites/enemies/goblet_gentleman/water_goblet_gentelman.png" id="4_xc0ph"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dv0eb"]
+size = Vector2(28, 46)
+
+[sub_resource type="Animation" id="Animation_tvkk6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Water:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_8cc7s"]
+resource_name = "die"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.15, 0.2, 0.25, 0.3, 0.35, 0.4, 0.45),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Water:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [6]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath(".")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(),
+"transitions": PackedFloat32Array(),
+"values": []
+}
+
+[sub_resource type="Animation" id="Animation_r2e7w"]
+resource_name = "move"
+length = 0.42
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.06, 0.12, 0.18, 0.24, 0.3, 0.36),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [7, 8, 9, 10, 11, 12, 13]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Water:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.06, 0.12, 0.18, 0.24, 0.3, 0.36),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [7, 8, 9, 10, 11, 12, 7]
+}
+
+[sub_resource type="Animation" id="Animation_2v74y"]
+resource_name = "spawn"
+length = 0.7
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Water:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c7gmr"]
+_data = {
+&"RESET": SubResource("Animation_tvkk6"),
+&"die": SubResource("Animation_8cc7s"),
+&"move": SubResource("Animation_r2e7w"),
+&"spawn": SubResource("Animation_2v74y")
+}
+
+[node name="GobletGentleman" type="PathFollow2D" unique_id=1367321217 groups=["enemy"]]
+rotates = false
+loop = false
+script = ExtResource("1_2mgeu")
+speed = 75.0
+damage = 10
+max_health = 200.0
+money_dropped = 20.0
+water_gradient = ExtResource("2_4bebl")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=672796143]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1942470017]
+position = Vector2(0, 7)
+shape = SubResource("RectangleShape2D_dv0eb")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1928348862]
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("3_swh2g")
+hframes = 5
+vframes = 5
+frame = 7
+
+[node name="Water" type="Sprite2D" parent="." unique_id=2015118153]
+z_index = -1
+texture_filter = 1
+scale = Vector2(2, 2)
+texture = ExtResource("4_xc0ph")
+hframes = 4
+vframes = 4
+frame = 7
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=1610384249]
+libraries/ = SubResource("AnimationLibrary_c7gmr")
+
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_finished"]

@@ -1,0 +1,7 @@
+[gd_scene format=3 uid="uid://d04ysyshxrah0"]
+
+[ext_resource type="Script" uid="uid://dx0na1xh8c4tt" path="res://entities/managers/health_manager/health_manager.gd" id="1_1uxk8"]
+
+[node name="HealthManager" type="Node2D" unique_id=1904193051 groups=["health_manager"]]
+script = ExtResource("1_1uxk8")
+max_health = 100

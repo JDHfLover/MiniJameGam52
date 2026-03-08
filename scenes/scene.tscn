@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 [gd_scene format=3 uid="uid://bxk0ev0xoxkqh"]
 
 [ext_resource type="PackedScene" uid="uid://cmmd34auylm3f" path="res://entities/enemies/angry_glass/angry_glass.tscn" id="1_5fb3c"]
@@ -14,6 +15,112 @@ point_count = 8
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5fb3c"]
 radius = 159.01257
+=======
+[gd_scene format=4 uid="uid://cto7plypn2sv7"]
+
+[ext_resource type="PackedScene" uid="uid://cmmd34auylm3f" path="res://entities/enemies/angry_glass/angry_glass.tscn" id="1_5yiy0"]
+[ext_resource type="PackedScene" uid="uid://ccsjh8c0iatp1" path="res://entities/enemies/goblet_gentleman/goblet_gentleman.tscn" id="1_ruw3y"]
+[ext_resource type="Texture2D" uid="uid://cvsjtaybouxhe" path="res://assets/sprites/tiles/table_grid.png" id="4_ruw3y"]
+[ext_resource type="PackedScene" uid="uid://c68s1q4xci4g0" path="res://entities/managers/tower_manager/tower_manager.tscn" id="5_7182s"]
+[ext_resource type="PackedScene" uid="uid://d04ysyshxrah0" path="res://entities/managers/health_manager/health_manager.tscn" id="5_t7and"]
+[ext_resource type="PackedScene" uid="uid://dqhelytqhdeiu" path="res://entities/hud/hud.tscn" id="6_ruw3y"]
+[ext_resource type="PackedScene" uid="uid://bvydodhjdf57c" path="res://entities/tower_slot/tower_slot.tscn" id="6_tpwpp"]
+[ext_resource type="PackedScene" uid="uid://c7rlynyykxv24" path="res://entities/managers/wave_manager/wave_manager.tscn" id="7_dqloj"]
+[ext_resource type="PackedScene" uid="uid://bpj04k51shu64" path="res://entities/managers/money_manager/money_manager.tscn" id="7_ruw3y"]
+[ext_resource type="Script" uid="uid://bi3fo3hobri2a" path="res://entities/managers/wave_manager/wave.gd" id="8_5yiy0"]
+[ext_resource type="Script" uid="uid://cja3p57gruv2y" path="res://entities/managers/wave_manager/wave_item.gd" id="9_0f71q"]
+
+[sub_resource type="Curve2D" id="Curve2D_grwth"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, -622.92, 160, 1.205, 0, -1.205, 0, -416, 160, 0, 0, 0, 0, -416, -224, 0, 0, 0, 0, -96, -224, 0, 0, 0, 0, -96, 160, 0, 0, 0, 0, 96, 160, 0, 0, 0, 0, 96, 32, 0, 0, 0, 0, 480, 32, 0, 0, 0, 0, 480, 160, 0, 0, 0, 0, 672, 160)
+}
+point_count = 10
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ftgl"]
+texture = ExtResource("4_ruw3y")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+5:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+3:1/0 = 0
+4:1/0 = 0
+5:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+3:2/0 = 0
+4:2/0 = 0
+5:2/0 = 0
+0:3/0 = 0
+1:3/0 = 0
+2:3/0 = 0
+3:3/0 = 0
+4:3/0 = 0
+5:3/0 = 0
+0:4/0 = 0
+1:4/0 = 0
+2:4/0 = 0
+3:4/0 = 0
+4:4/0 = 0
+5:4/0 = 0
+0:5/0 = 0
+1:5/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_dqloj"]
+tile_size = Vector2i(32, 32)
+sources/0 = SubResource("TileSetAtlasSource_7ftgl")
+
+[sub_resource type="Resource" id="Resource_1id6j"]
+script = ExtResource("9_0f71q")
+enemy = ExtResource("1_5yiy0")
+metadata/_custom_type_script = "uid://cja3p57gruv2y"
+
+[sub_resource type="Resource" id="Resource_dv0eb"]
+script = ExtResource("9_0f71q")
+enemy = ExtResource("1_5yiy0")
+delay_before_enemy = 2.0
+metadata/_custom_type_script = "uid://cja3p57gruv2y"
+
+[sub_resource type="Resource" id="Resource_tvkk6"]
+script = ExtResource("9_0f71q")
+enemy = ExtResource("1_5yiy0")
+metadata/_custom_type_script = "uid://cja3p57gruv2y"
+
+[sub_resource type="Resource" id="Resource_8cc7s"]
+script = ExtResource("8_5yiy0")
+wave_items = Array[ExtResource("9_0f71q")]([SubResource("Resource_1id6j"), SubResource("Resource_dv0eb"), SubResource("Resource_tvkk6")])
+delay_before_wave = 2.0
+metadata/_custom_type_script = "uid://bi3fo3hobri2a"
+
+[sub_resource type="Resource" id="Resource_r2e7w"]
+script = ExtResource("9_0f71q")
+enemy = ExtResource("1_ruw3y")
+metadata/_custom_type_script = "uid://cja3p57gruv2y"
+
+[sub_resource type="Resource" id="Resource_2v74y"]
+script = ExtResource("9_0f71q")
+enemy = ExtResource("1_5yiy0")
+delay_before_enemy = 2.0
+metadata/_custom_type_script = "uid://cja3p57gruv2y"
+
+[sub_resource type="Resource" id="Resource_c7gmr"]
+script = ExtResource("9_0f71q")
+enemy = ExtResource("1_ruw3y")
+delay_before_enemy = 2.0
+metadata/_custom_type_script = "uid://cja3p57gruv2y"
+
+[sub_resource type="Resource" id="Resource_fsfa6"]
+script = ExtResource("8_5yiy0")
+wave_items = Array[ExtResource("9_0f71q")]([SubResource("Resource_r2e7w"), SubResource("Resource_2v74y"), SubResource("Resource_c7gmr")])
+delay_before_wave = 10.0
+metadata/_custom_type_script = "uid://bi3fo3hobri2a"
+>>>>>>> 4810920cd7e6793dc66432f387b4b634af5b7029
 
 [node name="Scene" type="Node2D" unique_id=481614008]
 
@@ -24,9 +131,9 @@ position = Vector2(-629, -350)
 
 [node name="Path2D" type="Path2D" parent="." unique_id=180469636 groups=["enemy_path"]]
 position = Vector2(0, 2)
-scale = Vector2(0.71944445, 1.00591)
 curve = SubResource("Curve2D_grwth")
 
+<<<<<<< HEAD
 [node name="AngryGlass" parent="Path2D" unique_id=1859119774 instance=ExtResource("1_5fb3c")]
 position = Vector2(-672.7413, -239.58406)
 
@@ -45,18 +152,53 @@ texture_filter = 1
 position = Vector2(-201, -27)
 scale = Vector2(4, 4)
 texture = ExtResource("3_tpwpp")
+=======
+[node name="MoneyManager" parent="." unique_id=2009508734 instance=ExtResource("7_ruw3y")]
 
-[node name="AttackArea" type="Area2D" parent="Towers/CoolerTower" unique_id=578949625]
+[node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1841948430]
+z_index = -10
+texture_filter = 1
+scale = Vector2(2, 2)
+tile_map_data = PackedByteArray("AAAJAPv/AAABAAEAAAD2//v/AAAAAAAAAAD2/wQAAAAAAAQAAAD3//v/AAABAAAAAAD4//v/AAABAAAAAAD6//v/AAABAAAAAAD7//v/AAABAAAAAAD8//v/AAABAAAAAAD9//v/AAABAAAAAAD+//v/AAABAAAAAAD///v/AAABAAAAAAAAAPv/AAABAAAAAAABAPv/AAABAAAAAAACAPv/AAABAAAAAAADAPv/AAABAAAAAAAEAPv/AAABAAAAAAAFAPv/AAABAAAAAAAGAPv/AAABAAAAAAAHAPv/AAABAAAAAAAIAPv/AAABAAAAAAD2//z/AAACAAEAAAD2//3/AAACAAEAAAD2//7/AAACAAEAAAD2////AAACAAEAAAD5//v/AAABAAAAAAD2/wAAAAACAAEAAAD2/wEAAAACAAEAAAD2/wIAAAAEAAMAAFD2/wMAAAACAAEAAAD3/wQAAAABAAQAAAD4/wQAAAABAAQAAAD5/wQAAAABAAQAAAD6/wQAAAABAAQAAAD7/wQAAAABAAQAAAD8/wQAAAABAAQAAAD9/wQAAAABAAQAAAD+/wQAAAABAAQAAAD//wQAAAABAAQAAAAAAAQAAAABAAQAAAABAAQAAAABAAQAAAACAAQAAAABAAQAAAADAAQAAAABAAQAAAAEAAQAAAABAAQAAAAFAAQAAAABAAQAAAAGAAQAAAABAAQAAAAHAAQAAAABAAQAAAD3//z/AAACAAEAAAD3//3/AAAEAAEAAAD3//7/AAACAAEAAAD3////AAAFAAEAAAD3/wAAAAACAAEAAAD3/wEAAAABAAIAAAD3/wIAAAAEAAMAAFD3/wMAAAACAAEAAAD4//z/AAACAAEAAAD4//3/AAACAAEAAAD4//7/AAACAAEAAAD4////AAACAAEAAAD4/wAAAAACAAEAAAD4/wEAAAACAAEAAAD4/wIAAAAEAAMAAFD4/wMAAAAAAAIAAAD5//z/AAAAAAMAAED5//3/AAAEAAMAAAD5//7/AAAEAAMAAAD5////AAAEAAMAAAD5/wAAAAAEAAMAAAD5/wEAAAAEAAMAAAD5/wIAAAAAAAMAADD5/wMAAAACAAEAAAD6//z/AAAEAAMAAHD6//3/AAACAAEAAAD6//7/AAACAAEAAAD6////AAACAAIAAAD6/wAAAAACAAEAAAD6/wEAAAACAAEAAAD6/wIAAAAEAAEAAAD6/wMAAAABAAIAAAD7//z/AAAEAAMAAHD7//3/AAACAAIAAAD7//7/AAACAAEAAAD7////AAACAAEAAAD7/wAAAAACAAEAAAD7/wEAAAACAAEAAAD7/wIAAAACAAEAAAD7/wMAAAACAAEAAAD8//z/AAAEAAMAAHD8//3/AAACAAEAAAD8//7/AAACAAEAAAD8////AAABAAIAAAD8/wAAAAACAAEAAAD8/wEAAAAFAAEAAAD8/wIAAAACAAEAAAD8/wMAAAACAAEAAAD9//z/AAAEAAMAAHD9//3/AAACAAEAAAD9//7/AAACAAEAAAD9////AAAEAAIAAAD9/wAAAAACAAEAAAD9/wEAAAACAAEAAAD9/wIAAAACAAEAAAD9/wMAAAAEAAEAAAD+//z/AAAAAAMAAFD+//3/AAAEAAMAACD+//7/AAAEAAMAACD+////AAAEAAMAACD+/wAAAAAEAAMAACD+/wEAAAAEAAMAACD+/wIAAAAAAAMAAGD+/wMAAAACAAEAAAD///z/AAACAAEAAAD///3/AAACAAEAAAD///7/AAACAAEAAAD/////AAACAAEAAAD//wAAAAACAAEAAAD//wEAAAACAAEAAAD//wIAAAAEAAMAAED//wMAAAACAAEAAAAAAPz/AAACAAEAAAAAAP3/AAAEAAEAAAAAAP7/AAACAAEAAAAAAP//AAACAAEAAAAAAAAAAAACAAEAAAAAAAEAAAACAAIAAAAAAAIAAAAEAAMAAEAAAAMAAAACAAEAAAABAPz/AAACAAEAAAABAP3/AAACAAEAAAABAP7/AAACAAEAAAABAP//AAACAAEAAAABAAIAAAAAAAMAAHABAAMAAAACAAEAAAACAPz/AAACAAEAAAACAP3/AAACAAEAAAACAP7/AAAFAAEAAAACAP//AAACAAEAAAACAAAAAAAEAAMAAHACAAIAAAACAAEAAAACAAMAAAAEAAEAAAADAPz/AAACAAEAAAADAP3/AAACAAEAAAADAP7/AAACAAEAAAADAP//AAACAAEAAAADAAAAAAAEAAMAAHADAAEAAAACAAEAAAADAAIAAAACAAEAAAADAAMAAAACAAEAAAAEAPz/AAACAAEAAAAEAP3/AAABAAIAAAAEAP7/AAACAAEAAAAEAP//AAACAAEAAAAEAAAAAAAEAAMAAHAEAAEAAAACAAEAAAAEAAIAAAACAAEAAAAEAAMAAAAAAAIAAAAFAPz/AAACAAEAAAAFAP3/AAACAAEAAAAFAP7/AAACAAEAAAAFAP//AAADAAIAAAAFAAAAAAAEAAMAAHAFAAEAAAABAAIAAAAFAAIAAAACAAEAAAAFAAMAAAACAAEAAAAGAPz/AAAAAAIAAAAGAP3/AAACAAEAAAAGAP7/AAACAAEAAAAGAP//AAACAAEAAAAGAAAAAAAEAAMAAEAGAAEAAAACAAEAAAAGAAIAAAAAAAIAAAAGAAMAAAACAAEAAAAHAPz/AAACAAEAAAAHAP3/AAAFAAEAAAAHAP7/AAACAAEAAAAHAP//AAACAAEAAAAHAAAAAAAAAAMAAFAHAAEAAAAEAAMAABAHAAMAAAACAAEAAAAIAPz/AAACAAEAAAAIAP3/AAACAAEAAAAIAP7/AAACAAEAAAAIAP//AAACAAEAAAAIAAAAAAACAAEAAAAIAAEAAAAEAAIAAAAJAPz/AAACAAEAAAAJAP3/AAACAAEAAAAJAP7/AAACAAEAAAAJAP//AAACAAEAAAAJAAAAAAACAAEAAAAJAAEAAAACAAEAAAAJAAIAAAAEAAMAAHAJAAMAAAACAAEAAAACAAEAAAACAAEAAAABAAEAAAAEAAMAABABAAAAAAAAAAMAAEAHAAIAAAAAAAMAAGAIAAIAAAAEAAMAAHAIAAMAAAACAAEAAAAIAAQAAAABAAQAAAAJAAQAAAABAAUAAAA=")
+tile_set = SubResource("TileSet_dqloj")
+>>>>>>> 4810920cd7e6793dc66432f387b4b634af5b7029
 
+[node name="TowerSlots" type="Node2D" parent="." unique_id=937962746]
+
+<<<<<<< HEAD
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Towers/CoolerTower/AttackArea" unique_id=437989672]
 position = Vector2(-201, -14)
 shape = SubResource("CircleShape2D_5fb3c")
+=======
+[node name="TowerSlot1" parent="TowerSlots" unique_id=1896855636 instance=ExtResource("6_tpwpp")]
+position = Vector2(-352, -32)
+>>>>>>> 4810920cd7e6793dc66432f387b4b634af5b7029
 
-[node name="AttackTimer" type="Timer" parent="Towers/CoolerTower" unique_id=889525586]
-one_shot = true
+[node name="TowerSlot2" parent="TowerSlots" unique_id=1437280656 instance=ExtResource("6_tpwpp")]
+position = Vector2(-288, -160)
 
+<<<<<<< HEAD
 [node name="AttackPivot" type="Node2D" parent="Towers/CoolerTower" unique_id=1187710206]
 position = Vector2(-200, -10)
+=======
+[node name="TowerSlot3" parent="TowerSlots" unique_id=1429325880 instance=ExtResource("6_tpwpp")]
+position = Vector2(-160, -32)
+>>>>>>> 4810920cd7e6793dc66432f387b4b634af5b7029
 
-[connection signal="area_entered" from="Towers/CoolerTower/AttackArea" to="Towers/CoolerTower" method="_on_attack_area_area_entered"]
-[connection signal="area_exited" from="Towers/CoolerTower/AttackArea" to="Towers/CoolerTower" method="_on_attack_area_area_exited"]
+[node name="TowerSlot4" parent="TowerSlots" unique_id=518090272 instance=ExtResource("6_tpwpp")]
+position = Vector2(32, 96)
+
+[node name="TowerSlot5" parent="TowerSlots" unique_id=899968451 instance=ExtResource("6_tpwpp")]
+position = Vector2(352, -32)
+
+[node name="TowerSlot6" parent="TowerSlots" unique_id=1769322110 instance=ExtResource("6_tpwpp")]
+position = Vector2(544, 96)
+
+[node name="TowerManager" parent="." unique_id=122224086 instance=ExtResource("5_7182s")]
+
+[node name="HealthManager" parent="." unique_id=1904193051 instance=ExtResource("5_t7and")]
+
+[node name="HUD" parent="." unique_id=1213306413 instance=ExtResource("6_ruw3y")]
+
+[node name="WaveManager" parent="." unique_id=813043354 instance=ExtResource("7_dqloj")]
+waves = Array[ExtResource("8_5yiy0")]([SubResource("Resource_8cc7s"), SubResource("Resource_fsfa6")])

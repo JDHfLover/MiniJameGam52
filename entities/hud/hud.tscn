@@ -1,0 +1,374 @@
+[gd_scene format=3 uid="uid://dqhelytqhdeiu"]
+
+[ext_resource type="Texture2D" uid="uid://4uwln0rbrfjy" path="res://assets/sprites/UI/tower_buttons.png" id="1_43m1k"]
+[ext_resource type="Texture2D" uid="uid://dthwt14wdiexx" path="res://assets/sprites/UI/health_icon.png" id="2_bhfsx"]
+[ext_resource type="Texture2D" uid="uid://0q2diiho0vfl" path="res://assets/sprites/UI/money_icon.png" id="3_fcios"]
+[ext_resource type="Texture2D" uid="uid://b3hx4gvj3po7v" path="res://assets/sprites/UI/wave_begin_button.png" id="4_fcios"]
+[ext_resource type="Texture2D" uid="uid://eefqu2jefrbc" path="res://assets/sprites/UI/blizzard_whistle.png" id="5_ds3f6"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gjmho"]
+atlas = ExtResource("1_43m1k")
+region = Rect2(7, 39, 17, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t7and"]
+atlas = ExtResource("1_43m1k")
+region = Rect2(39, 39, 17, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ruw3y"]
+atlas = ExtResource("1_43m1k")
+region = Rect2(71, 39, 17, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7182s"]
+atlas = ExtResource("1_43m1k")
+region = Rect2(7, 71, 17, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tpwpp"]
+atlas = ExtResource("1_43m1k")
+region = Rect2(71, 7, 17, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ftgl"]
+atlas = ExtResource("1_43m1k")
+region = Rect2(7, 7, 17, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dqloj"]
+atlas = ExtResource("2_bhfsx")
+region = Rect2(12, 12, 8, 7)
+
+[sub_resource type="LabelSettings" id="LabelSettings_5yiy0"]
+font_size = 48
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0f71q"]
+atlas = ExtResource("3_fcios")
+region = Rect2(9, 9, 14, 14)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mwkh4"]
+atlas = ExtResource("4_fcios")
+region = Rect2(7, 7, 17, 18)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_khi7d"]
+atlas = ExtResource("5_ds3f6")
+region = Rect2(9, 11, 14, 10)
+
+[node name="HUD" type="CanvasLayer" unique_id=1213306413 groups=["hud"]]
+layer = 2
+
+[node name="TowerMenu" type="PanelContainer" parent="." unique_id=675570145]
+visible = false
+z_index = 10
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -768.0
+offset_top = -600.0
+offset_right = -512.0
+offset_bottom = -408.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BuildMenu" type="Control" parent="TowerMenu" unique_id=1244533733]
+layout_mode = 2
+
+[node name="BuildCoolerButton" type="Button" parent="TowerMenu/BuildMenu" unique_id=2071758504]
+texture_filter = 1
+layout_mode = 1
+offset_left = 32.0
+offset_top = 16.0
+offset_right = 96.0
+offset_bottom = 80.0
+icon = SubResource("AtlasTexture_gjmho")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="TowerMenu/BuildMenu/BuildCoolerButton" unique_id=1506022651]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -8.0
+offset_right = 32.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BuildFridgeButton" type="Button" parent="TowerMenu/BuildMenu" unique_id=948948550]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 33.0
+offset_top = -80.0
+offset_right = 97.0
+offset_bottom = -16.0
+grow_vertical = 0
+icon = SubResource("AtlasTexture_t7and")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="TowerMenu/BuildMenu/BuildFridgeButton" unique_id=331947764]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -8.0
+offset_right = 32.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BuildFountainButton" type="Button" parent="TowerMenu/BuildMenu" unique_id=619558678]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -96.0
+offset_top = 16.0
+offset_right = -32.0
+offset_bottom = 80.0
+grow_horizontal = 0
+icon = SubResource("AtlasTexture_ruw3y")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="TowerMenu/BuildMenu/BuildFountainButton" unique_id=996772800]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -8.0
+offset_right = 32.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="BuildCatapultButton" type="Button" parent="TowerMenu/BuildMenu" unique_id=1573306015]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -80.0
+offset_right = -32.00003
+offset_bottom = -16.0
+grow_horizontal = 0
+grow_vertical = 0
+icon = SubResource("AtlasTexture_7182s")
+flat = true
+icon_alignment = 1
+expand_icon = true
+
+[node name="Label" type="Label" parent="TowerMenu/BuildMenu/BuildCatapultButton" unique_id=2139705452]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -8.0
+offset_right = 32.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="UpgradeMenu" type="Control" parent="TowerMenu" unique_id=1819097672]
+layout_mode = 2
+
+[node name="UpgradeButton" type="Button" parent="TowerMenu/UpgradeMenu" unique_id=1316572891]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -32.0
+offset_top = 16.0
+offset_right = 32.0
+offset_bottom = 80.0
+grow_horizontal = 2
+icon = SubResource("AtlasTexture_tpwpp")
+flat = true
+expand_icon = true
+
+[node name="Label" type="Label" parent="TowerMenu/UpgradeMenu/UpgradeButton" unique_id=518237428]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -8.0
+offset_right = 32.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="SellButton" type="Button" parent="TowerMenu/UpgradeMenu" unique_id=953205734]
+texture_filter = 1
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -80.0
+offset_right = 32.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 0
+icon = SubResource("AtlasTexture_7ftgl")
+flat = true
+expand_icon = true
+
+[node name="Label" type="Label" parent="TowerMenu/UpgradeMenu/SellButton" unique_id=886540106]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -32.0
+offset_top = -8.0
+offset_right = 32.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 0
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HealthGroup" type="HBoxContainer" parent="." unique_id=1222887436]
+z_index = 10
+anchors_preset = -1
+anchor_left = -0.492
+anchor_top = -0.49100003
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 661.76
+offset_top = 385.52002
+offset_right = -96.0
+offset_bottom = -261.0
+
+[node name="TextureRect" type="TextureRect" parent="HealthGroup" unique_id=494117053]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_vertical = 0
+texture = SubResource("AtlasTexture_dqloj")
+
+[node name="Label" type="Label" parent="HealthGroup" unique_id=991845323]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "0"
+label_settings = SubResource("LabelSettings_5yiy0")
+vertical_alignment = 1
+
+[node name="MoneyGroup" type="HBoxContainer" parent="." unique_id=497673539]
+z_index = 10
+anchors_preset = -1
+anchor_left = -0.49400002
+anchor_top = -0.485
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 664.32
+offset_top = 477.2
+offset_right = -96.0
+offset_bottom = -165.0
+
+[node name="TextureRect" type="TextureRect" parent="MoneyGroup" unique_id=2071063075]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_vertical = 0
+texture = SubResource("AtlasTexture_0f71q")
+
+[node name="Label" type="Label" parent="MoneyGroup" unique_id=1160288944]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 1
+text = "0"
+label_settings = SubResource("LabelSettings_5yiy0")
+vertical_alignment = 1
+
+[node name="WaveGroup" type="HBoxContainer" parent="." unique_id=2046843298]
+z_index = 10
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -96.0
+offset_top = -96.0
+offset_right = -32.0
+offset_bottom = -32.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Button" type="Button" parent="WaveGroup" unique_id=1899225456]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+icon = SubResource("AtlasTexture_mwkh4")
+flat = true
+expand_icon = true
+
+[node name="Label" type="Label" parent="WaveGroup/Button" unique_id=427483792]
+layout_mode = 0
+offset_top = -24.0
+offset_right = 63.999985
+horizontal_alignment = 1
+
+[node name="AbilityGroup" type="HBoxContainer" parent="." unique_id=83146256]
+z_index = 10
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -192.0
+offset_top = -96.0
+offset_right = -128.0
+offset_bottom = -32.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Button" type="Button" parent="AbilityGroup" unique_id=239329306]
+texture_filter = 1
+custom_minimum_size = Vector2(64, 64)
+layout_mode = 2
+size_flags_horizontal = 6
+size_flags_vertical = 4
+icon = SubResource("AtlasTexture_khi7d")
+flat = true
+expand_icon = true

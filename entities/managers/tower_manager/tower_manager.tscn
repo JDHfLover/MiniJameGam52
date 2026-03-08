@@ -1,0 +1,11 @@
+[gd_scene format=3 uid="uid://c68s1q4xci4g0"]
+
+[ext_resource type="Script" uid="uid://db4g5jkwr7lus" path="res://entities/managers/tower_manager/tower_manager.gd" id="1_v1gr5"]
+[ext_resource type="PackedScene" uid="uid://cvoiiqx7py533" path="res://entities/towers/cooler_tower/cooler_tower.tscn" id="2_nt48y"]
+[ext_resource type="PackedScene" uid="uid://jt20te3l4ndw" path="res://entities/towers/fridge_tower/fridge_tower.tscn" id="3_nt48y"]
+[ext_resource type="PackedScene" uid="uid://ddjg4av2av2v3" path="res://entities/towers/fountain_tower/fountain_tower.tscn" id="4_vlbbt"]
+[ext_resource type="PackedScene" uid="uid://cqs5lsdv2gif2" path="res://entities/towers/catapult_tower/catapult_tower.tscn" id="5_63byw"]
+
+[node name="TowerManager" type="Node2D" unique_id=122224086]
+script = ExtResource("1_v1gr5")
+tower_scenes = Array[PackedScene]([ExtResource("2_nt48y"), ExtResource("3_nt48y"), ExtResource("4_vlbbt"), ExtResource("5_63byw")])
